@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+$background: #FFFFFF80;
+$primary-text: #000;
+$secondary-text: #00000080;
+$primary: #1A4E4A;
+$accent: #67FAD7;
+
+$ff: 'Poppins', 'sans-serif';
+
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+}
+
+button, input, textarea {
+    outline: none;
+    border: none;
+    font-family: $ff;
+}
+
+a {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+body {
+    background-color: $background;
+    font-family: $ff;
+    color: $primary-text;
+}
