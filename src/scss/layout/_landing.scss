@@ -1,0 +1,106 @@
+.categories-wrapper {
+    display: grid;
+    position: relative;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    align-content: space-around;
+    padding: 2rem 0;
+    
+    text-align: center;
+
+    .section-title {
+        padding: 1rem;
+        font-weight: 500;
+    }
+
+    .categories {
+        display: flex;
+        max-width: 1500px;
+        height: fit-content;
+        margin: 0 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1rem;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem 5rem;
+        
+        .category {
+            width: calc(100px + 1rem);
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            cursor: pointer;
+            transition: 200ms ease;
+
+
+            .category-image-wrapper {
+                width: 100px;
+                height: 100px;
+                left: 1rem;
+                position: relative;
+
+                .front-image-wrapper {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 1rem;
+
+                    .front-image {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 100%;
+                    }
+                }
+
+                .back-image {
+                    background-color: $primary;
+                    border-radius: 100%;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    right: 1rem;
+                }
+
+            }
+        }
+
+        .category:nth-child(3n) {
+            .category-image-wrapper {
+                .back-image {
+                    background-color: $accent;
+                }
+            }
+        }
+
+        .category:hover {
+            scale: .95;
+
+        }
+
+    }
+
+    .search-bar-wrapper {
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+}
+
+.hero-svg {
+    position: absolute;
+    right: 0%;
+    top: -1%;
+    z-index: -1;
+}
+
+.hero-svg-bottom {
+    position: absolute;
+    right: 88%;
+    transform: rotate(180deg);
+    top: calc(100% - 307px);
+    z-index: -1;
+}
