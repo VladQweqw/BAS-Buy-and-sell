@@ -8,11 +8,6 @@
     
     text-align: center;
 
-    .section-title {
-        padding: 1rem;
-        font-weight: 500;
-    }
-
     .categories {
         display: flex;
         max-width: 1500px;
@@ -99,8 +94,8 @@
 
 .hero-svg-bottom {
     position: absolute;
-    right: 88%;
-    transform: rotate(180deg);
-    top: calc(100% - 307px);
+    right: calc(100% - 287px);
+    transform: rotate(-90deg);
+    top: -5%;
     z-index: -1;
 }

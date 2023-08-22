@@ -1,0 +1,25 @@
+.product-page-wrapper {
+  height: 100%;
+}
+
+.product-page-container {
+  max-width: 1600px;
+  display: grid;
+  gap: 5rem;
+  margin: 0 auto;
+  border: 1px solid;
+  height: 100%;
+}
+.product-page-container .product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.product-page-container .product-page .product-image-wrapper {
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+}
+.product-page-container .product-page .product-image-wrapper .product-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=product.css.map */

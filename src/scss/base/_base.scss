@@ -44,6 +44,12 @@ body {
 
 .article {
     min-height: calc(100vh - 70px);
+
+    .section-title {
+        text-align: center;
+        padding: 1rem;
+        font-weight: 500;
+    }
 }
 
 .fade {
