@@ -1,0 +1,146 @@
+.product-page-wrapper {
+    height: 100%;
+    display: grid;
+    gap: 5rem;
+    grid-template-rows: 50px auto;
+    padding: 1rem 0;
+}
+
+.product-page-container {
+    max-width: 1600px;
+    display: grid;
+    gap: 5rem;
+    margin: 0 auto;
+    height: 100%;
+    padding: 1rem;
+
+    .product-page {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+ 
+        
+        .product-image-wrapper {
+            width: 100%;
+            border: 5px solid $primary;
+            max-height: 600px;
+
+            .product-image {
+                object-fit: contain;
+                height: 100%;
+                width: 100%;
+                
+            }
+
+        }
+
+    }
+
+    .product-details {
+        padding: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        height: 100%;
+
+        .product-title {
+            font-weight: 400;
+        }
+
+        .price-wrapper {
+
+            .posted-time {
+                font-weight: 400;
+                font-size: 1rem;
+                color: $secondary-text;
+            }
+            
+            .price {
+                line-height: 35px;
+                color: $primary;
+                font-weight: 500;
+                font-size: 2.5rem;
+            }
+        }
+
+        .product-location {
+
+            .location-wrapper {
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+            }
+
+            .location {
+                display: inline;
+
+            }
+
+            .map {
+                height: 200px;
+                width: 250px;
+                background-size: cover;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    
+                }
+            }
+
+        }
+
+    }
+
+    .buttons-wrapper {
+        display: flex;
+        gap: 5px;
+
+        .button {
+            width: 150px;
+        }
+
+        .message-btn {
+            background-color: $accent;
+            color: black;
+        }
+
+    }
+
+}
+
+.suggested-products {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem;
+
+    .product {
+        width: clamp(250px, 50%, 300px);
+        flex: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+    .product-page-container {
+        .product-page {
+            grid-template-columns: auto;
+        
+            .product-details {
+                width: 100%;
+                align-items: center;
+
+                .product-location {
+                    .map {
+
+                        
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,64 +1,37 @@
-import SearchBar from '../components/searchBar';
-import UseAPi from '../components/useApi'
-import { useParams } from 'react-router'
+import { Link } from "react-router-dom";
+import { getTime, capitalize, titleToUrl } from "../assets/functions";
 
-export default function Product() {
-   const { id } = useParams();
+export function Product(data: ProductType) {
 
-   const {data, error, isLoading}: {
-      data: ProductType,
-      error: string | null,
-      isLoading: boolean,
-    } = UseAPi(`https://fakestoreapi.com/products/${id}`, 'GET')
-   
-   if(error) return <h1>error</h1>
-   if(isLoading) return <h1>Loading...</h1>
 
-   return(
-      <article className="article product-page-wrapper">
-         <SearchBar />
-         
-         <div className="product-page-container">
-            <div className="product-page">
-               <div className="product-image-wrapper">
-                  <img src={data?.image} alt={data?.title} className="product-image" />
-               </div>
+    return(
+            <div className="product" key={data.id}>
+                <Link to={`/${titleToUrl(data.title)}/${data.id}`}>
+                   {Math.random() > .7 && 
+                    <div title="Shipping" className='courier'>
+                        <i className="fas fa-truck"></i>
+                    </div> }
 
-               <div className="product-details">
-                  <h1 className="product-title">{data?.title}</h1>
+                    <div className="product-image-wrapper">
+                        <img src={data.image} alt={data.title} className="product-image" />
+                    </div>
+                </Link>
 
-                  <div className="price-wrapper">
-                     <h5 className="posted-time"></h5>
-                     <h1 className="price">{data?.price}EUR</h1>
-                  </div>
+                <div className="product-content">
+                    <Link to={`/${data.title}`}>
+                        <h3 className="product-title">{data.title}</h3>
+                    </Link>
 
-                  <div className="product-location">
-                     <div className="location-wrapper">
-                        <i className="fas fa-marker"></i>
-                        <h5 className='location'></h5>
-                     </div>
+                <div className="wrapper">
+                        <div className="product-details">
+                            <h5 className="product-posted">{getTime(Math.floor(Math.random() * (new Date().getTime())))}, {capitalize(data.category)}, {data.rating.rate} <i className="fas fa-star"></i></h5>
+                            <h2 className="product-price">{data.price}EUR</h2>
+                        </div>
 
-                     <div className="map">
-
-                     </div>
-                  </div>
-
-                  <div className="buttons-wrapper">
-                     <button className="product-btn message-btn primary-button">Message</button>
-                     <button className="product-btn call-btn primary-button">Call</button>
-                  </div>
-               </div>
+                        {/* <i className="fas fa-heart"></i> */}
+                        <i className="fa-regular fa-heart"></i>
+                </div>
+                </div>
             </div>
-
-            {/* <div className="product-description">
-
-            </div>
-
-            <div className="product-seller">
-
-            </div> */}
-         </div>
-
-      </article>
-   )
+    )
 }

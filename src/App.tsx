@@ -2,7 +2,7 @@ import './assets/index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/navbar';
-import Product from './layout/product';
+import Product from './layout/productPage';
 import Landing from './layout/landing';
 import Products from './layout/products';
 import FewProducts from './layout/fewProducts';
